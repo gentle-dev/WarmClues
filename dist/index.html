@@ -12,7 +12,7 @@
 	</head>
 	<body class="nis" onload="TEST.initOnLoad()"></body>
 		<header>
-			<h1 class="title">Warm Clue TEST</h1>
+			<h1 class="title">OpenLogger, an open-source clue logger</h1>
 			<div class="header_box">
 				<div class="button_box">
 					<div class="clue_scrolls_buttons" id="top">
@@ -40,6 +40,18 @@
 							</div>
 						</div>
 					</div>
+					<div class="main_buttons" id="top">
+						<div id="top_buttons">
+							<div id="csv_button" class="nisbutton" onclick="TEST.exporttocsv();">Export to CSV</div>
+							<div id="settings_button" class="nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()"><img id="settings_cog" src="images/SettingsCog.png"></div>
+						</div>
+						<div id="clear_button" class="nisbutton" data-toggle="modal" data-target="#cleardb" onclick="TEST.autoDisableCheckAuto()">Clear Options Menu</div>
+						<div id="docapturebutton" class="nisbutton" onclick="TEST.capture(false)">
+							<div id="toggleunlocktrack" title="Autocapture toggle&#013;Locked = On; Unlocked = Off&#013;While on, capture button and Alt+1 is disabled&#013;This can be changed in the settings" class onclick="TEST.toggleCapture(event)"></div>
+							<span id="docapturebuttonwords">Capture Rewards</span>
+						</div>
+					</div>
+				</div>
 				<div class="value_box">
 					<div class="captured_rewards" id="top">
 						<div id="captured_rewards_title">
@@ -75,6 +87,36 @@
 				</div>
 			</div>
 		</header>
+		<mainsection>
+			<div class="broadcasts">
+				<div class="broadcasts_title"><span id="broadcasts_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide broadcast rewards">&nbsp;Broadcast Rewards&nbsp;</span></div>
+				<div class="bottom_border"></div>
+				<div class="loot_display" id="broadcasts_loot"></div>
+			</div>
+			<div class="general">
+				<div class="general_title"><span id="general_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide general rewards">&nbsp;General Rewards&nbsp;</span></div>
+				<div class="bottom_border"></div>
+				<div class="loot_display" id="general_loot"></div>
+			</div>
+			<div class="common">
+				<div class="common_title"><span id="common_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide common rewards">&nbsp;Common Rewards&nbsp;</span></div>
+				<div class="bottom_border"></div>
+				<div class="loot_display" id="common_loot"></div>
+			</div>
+			<div class="rare">
+				<div class="rare_title"><span id="rare_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide rare rewards">&nbsp;Rare Rewards&nbsp;</span></div>
+				<div class="bottom_border"></div>
+				<div class="loot_display" id="rare_loot"></div>
+			</div>
+		</mainsection>
+		<footer>
+			<div class="footer_bar"></div>
+			<a title="LoggerSuite home" draggable="false" id="home_button" href="https://redx1000.github.io/LoggerSuite/">
+				<img id="home_button_img" draggable="false" src="./images/House Teleport icon.png">
+			</a>
+			<div id="info_button" class="nisbutton" data-toggle="modal" data-target="#info" onclick="">&nbsp;Information & Updates&nbsp;</div>
+		</footer>
+		
 		<!-- SETTINGS MODAL -->
 		<div class="modal fade " id="settings" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
 		    <div class="modal-dialog">
